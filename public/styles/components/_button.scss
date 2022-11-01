@@ -1,0 +1,32 @@
+.btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0 14px;
+    height: 50px;
+    // border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: $grey;
+    transition: .3s;
+    &:hover {
+        background-color: $lightgrey;
+    }
+}
+
+//Alternate Button
+.btn.alt {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0 14px;
+    height: 50px;
+    color: white;
+    font-size: 14px;
+    background-color: $grey;
+    transition: .3s;
+    background-color: $green;
+    &:hover {
+        background-color: $lightgreen;
+    }
+}

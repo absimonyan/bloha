@@ -1,0 +1,58 @@
+nav {
+    background: white;
+    width: 100%;
+    position: relative;
+    box-shadow: #d5d5d5 1px 1px 5px 0px;
+    .nav__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: 858px) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.logo {
+    height: 50px;
+    color: black;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    float: right;
+    line-height: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+}
+
+#mobile-pay {
+    display: none;
+}
+
+@media screen and (max-width:728px) {
+    #desk-pay {
+        display: none;
+    }
+    #mobile-pay {
+        display: block;
+    }
+}

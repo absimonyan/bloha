@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.admin-sidebar {
+  background-color: #cecece;
+  flex: 1;
+  height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  .admin-sidebar {
+    flex: 2;
+  }
+}
+.admin-sidebar-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.admin-sidebar__item {
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  transition: 0.3s;
+}
+
+.admin-sidebar__item:hover {
+  background-color: #FEC216;
+}
+
+.admin-sidebar__item:hover a {
+  color: white !important;
+}
+
+.admin-sidebar__item a {
+  padding: 5px 0;
+  transition: 0.3s;
+  color: black;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.notification {
+  background-color: #FEC216;
+  color: black;
+  padding: 25px 40px;
+  width: 250px;
+  position: fixed;
+  z-index: 9999;
+  right: 50%;
+  text-align: center;
+  transform: translateX(50%);
+  top: 110px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.notification #notification-text {
+  width: 100%;
+}
+
+.notification #notification-close {
+  width: 25px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.pagination {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pagination a {
+  margin: 0 2px;
+  font-weight: bold;
+  font-size: 15px;
+  color: black;
+  float: left;
+  padding: 5px 9px;
+  text-decoration: none;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+}
+
+.pagination a.active {
+  background-color: #FEC216;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #e3e3e3;
+}
+
+.admin-nav-active {
+  background-color: #FEC216;
+}
+
+.admin-nav-active a {
+  color: white;
+}/*# sourceMappingURL=admin.css.map */

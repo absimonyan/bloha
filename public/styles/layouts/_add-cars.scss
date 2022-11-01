@@ -1,0 +1,298 @@
+.characteristic {
+    &-inner {
+        padding-top: 20px;
+    }
+    .accordion {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+    .tabs {
+        overflow: hidden;
+    }
+    .tab {
+        margin: 10px 0;
+        border-radius: 5px;
+        width: 100%;
+        color: black;
+        font-size: 13px;
+        overflow: hidden;
+        &-label {
+            display: flex;
+            justify-content: space-between;
+            padding: 1em;
+            background: $midnight;
+            // font-weight: bold;
+            cursor: pointer;
+            /* Icon */
+            &:hover {
+                background: darken($midnight, 10%);
+            }
+            &::after {
+                content: "\276F";
+                width: 1em;
+                height: 1em;
+                text-align: center;
+                transition: all .35s;
+            }
+        }
+        &-content {
+            max-height: 0;
+            padding: 0 1em;
+            color: #5b5b5b;
+            background: $lightblue;
+            transition: all .35s;
+            select,
+            input {
+                outline: none;
+                border: 1px solid rgb(214, 214, 214);
+                padding: 4px;
+            }
+            &-check {
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+                label {
+                    margin-left: 8px;
+                }
+            }
+            &.price {
+                display: flex;
+                justify-content: space-between;
+                .price-input {
+                    width: 70px;
+                    outline: none;
+                    border: 1px solid rgb(214, 214, 214);
+                    padding: 4px;
+                }
+            }
+        }
+        &-close {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1em;
+            font-size: 0.75em;
+            background: $midnight;
+            cursor: pointer;
+            &:hover {
+                background: darken(#EBECEC, 10%);
+            }
+        }
+        input:checked {
+            +.tab-label {
+                background-color: #EBECEC;
+                &::after {
+                    transform: rotate(90deg);
+                }
+            }
+            ~.tab-content {
+                max-height: 100vh;
+                padding: 1em;
+            }
+        }
+    }
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        &-item {
+            width: 24%;
+            margin: 20px 0;
+            margin-right: 10px;
+            @media screen and (max-width: 768px) {
+                width: 32%;
+                margin: 10px 3px;
+            }
+            @media screen and (max-width: 576px) {
+                width: 48%;
+            }
+            select,
+            input {
+                margin-top: 3px;
+                height: 35px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+h4 {
+    font-size: 13px;
+}
+
+.offer {
+    h4 {
+        font-weight: normal;
+    }
+    &-inner {
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: 728px) {
+            flex-direction: column;
+        }
+    }
+    &__left {
+        &__buttons {
+            display: flex;
+            justify-content: space-evenly;
+            @media screen and (max-width: 728px) {
+                justify-content: flex-start;
+            }
+            margin: 20px 0;
+            font-size: 13px;
+            &-button {
+                input {
+                    display: none;
+                }
+                span {
+                    cursor: pointer;
+                    outline: none;
+                    padding: 6px 15px;
+                    background-color: $lightblue;
+                    margin-right: 20px;
+                    border-radius: 5px;
+                    border: 1px solid $lightblue;
+                    transition: .3s;
+                    &:hover {
+                        border: 1px solid $yellow;
+                    }
+                }
+            }
+            &-button input[name="type"]:checked+span {
+                background-color: $yellow;
+                color: white;
+                color: black;
+            }
+        }
+        &__checks {
+            font-size: 13px;
+            display: flex;
+            margin-bottom: 20px;
+            @media screen and (max-width: 728px) {
+                justify-content: flex-start;
+            }
+            &-check {
+                margin-right: 42px;
+                align-items: center;
+            }
+        }
+    }
+    &__right {
+        margin-left: 86px;
+        @media screen and (max-width: 728px) {
+            margin-left: 0;
+        }
+        font-size: 13px;
+        &-input {
+            margin: 13px 0;
+            display: flex;
+            align-items: center;
+            input {
+                @media screen and (max-width: 728px) {
+                    width: 100%;
+                }
+                outline: none;
+                border: 1px solid rgb(214, 214, 214);
+                height: 34px;
+                padding: 0 10px;
+            }
+            span {
+                margin-left: 10px;
+                outline: none;
+                padding: 6px 15px;
+                background-color: $yellow;
+                border-radius: 5px;
+                color: black;
+            }
+        }
+    }
+}
+
+// Name and Description
+.info {
+    &-item {
+        padding: 20px 0;
+        h4 {
+            font-weight: normal;
+        }
+        input {
+            margin-top: 5px;
+            outline: none;
+            border: 1px solid rgb(214, 214, 214);
+            width: 50%;
+            height: 35px;
+            padding: 0 10px;
+            font-size: 17px;
+        }
+        textarea {
+            margin-top: 5px;
+            outline: none;
+            border: 1px solid rgb(214, 214, 214);
+            width: 50%;
+            resize: none;
+            padding: 10px;
+            font-size: 16px;
+            @media screen and (max-width: 728px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.image__upload {
+    &-inner {
+        padding: 20px 0;
+        .output {
+            display: flex;
+            flex-wrap: wrap;
+            img {
+                margin: 25px 0;
+                width: 150px;
+                height: 100px;
+                object-fit: contain;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.phone__number {
+    .number-part {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        @media screen and (max-width: 728px) {
+            width: 100%;
+        }
+    }
+    label {
+        font-size: 13px;
+    }
+    p {
+        padding-top: 40px;
+    }
+    input {
+        margin: 5px 0;
+        outline: none;
+        border: 1px solid rgb(214, 214, 214);
+        height: 35px;
+        padding: 0 10px;
+    }
+}
+
+.submit {
+    &-inner {
+        padding: 20px 0;
+    }
+    .btn {
+        width: 250px;
+        font-size: 13px;
+        @media screen and (max-width: 728px) {
+            width: 100%;
+        }
+    }
+}
+
+.filepond--item {
+    width: calc(50% - 0.5em);
+}

@@ -1,0 +1,20 @@
+.footer {
+    .container {
+        background-color: unset;
+        font-size: 13px;
+        color: #5b5b5b;
+    }
+    &-inner {
+        padding: 15px 0;
+    }
+    &-content {
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__right {
+        a {
+            color: #5b5b5b;
+        }
+    }
+}
