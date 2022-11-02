@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -180,25 +180,79 @@ nav .nav__inner {
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 858px) {
-  nav .nav__inner {
-    flex-direction: row-reverse;
-  }
-}
-
-.logo {
+nav .logo {
   height: 50px;
   color: black;
   font-size: 30px;
   line-height: 40px;
   font-weight: bold;
 }
-.logo img {
+nav .logo img {
   height: 100%;
   width: 100%;
 }
-
-.checkbtn {
+nav .nav__search__box {
+  display: flex;
+  width: 49%;
+}
+@media screen and (max-width: 728px) {
+  nav .nav__search__box {
+    width: 70%;
+  }
+}
+nav .nav__search__box input {
+  width: 100%;
+  outline: none;
+  border: 1px solid rgb(214, 214, 214);
+  padding: 4px;
+}
+nav .nav__search__box select {
+  outline: none;
+  border: 1px solid rgb(214, 214, 214);
+  padding: 4px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 728px) {
+  nav .nav__search__box select {
+    display: none;
+  }
+}
+nav .nav__search__buttons {
+  display: flex;
+}
+@media (max-width: 858px) {
+  nav .checkbtn {
+    display: block;
+  }
+  nav .nav__search__buttons {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background: #e2e2e2;
+    top: 50px;
+    right: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+  }
+  nav .nav__search__buttons button {
+    display: block;
+    line-height: 30px;
+  }
+  nav .nav__search__buttons button a {
+    font-size: 20px;
+  }
+  nav .nav__search__buttons button a:hover, nav .nav__search__buttons button a:active {
+    background: none;
+    color: #0082e6;
+  }
+  nav #check:checked .nav__search__buttons {
+    right: 0;
+  }
+}
+nav .checkbtn {
   font-size: 30px;
   color: rgb(0, 0, 0);
   float: right;
@@ -206,28 +260,26 @@ nav .nav__inner {
   cursor: pointer;
   display: none;
 }
-
-#check {
+nav #check {
   display: none;
 }
-
 @media (max-width: 858px) {
-  .checkbtn {
+  nav .checkbtn {
     display: block;
   }
 }
-#mobile-pay {
+nav #mobile-pay {
   display: none;
 }
-
 @media screen and (max-width: 728px) {
-  #desk-pay {
+  nav #desk-pay {
     display: none;
   }
-  #mobile-pay {
+  nav #mobile-pay {
     display: block;
   }
 }
+
 .paid-cars a {
   text-decoration: none;
   color: black;
@@ -272,7 +324,7 @@ body {
 }
 
 .marketplace-inner {
-  padding: 20px 0;
+  padding: 10px 0;
   display: flex;
 }
 @media (max-width: 728px) {
@@ -280,10 +332,24 @@ body {
     flex-direction: column;
   }
 }
+.marketplace__top {
+  padding: 10px 0;
+}
+.marketplace__top span {
+  font-size: 14px;
+  color: #5b5b5b;
+  cursor: pointer;
+}
+.marketplace__top span::after {
+  content: " >";
+}
+.marketplace__top span:last-child::after {
+  display: none;
+}
 .marketplace__sidebar {
   flex: 1 0 20%;
   max-width: 222px;
-  padding: 0 10px 0 6px;
+  padding: 0 10px 0 0;
 }
 @media screen and (max-width: 728px) {
   .marketplace__sidebar {
@@ -305,12 +371,11 @@ body {
   overflow: hidden;
 }
 .marketplace__sidebar .tab {
-  margin: 10px 0;
-  border-radius: 5px;
   width: 100%;
   color: black;
   font-size: 13px;
   overflow: hidden;
+  border-bottom: 1px solid #e1e1e1;
 }
 .marketplace__sidebar .tab-label {
   display: flex;
@@ -384,7 +449,8 @@ body {
   background: #d1d3d3;
 }
 .marketplace__sidebar input:checked + .tab-label {
-  background-color: #EBECEC;
+  background-color: #0d9846;
+  color: white;
 }
 .marketplace__sidebar input:checked + .tab-label::after {
   transform: rotate(90deg);
@@ -393,179 +459,179 @@ body {
   max-height: 100vh;
   padding: 1em;
 }
-.marketplace__cars {
+.marketplace__items {
   color: #5b5b5b;
   width: 100%;
+  margin-top: 13px;
 }
-.marketplace__cars-top {
+.marketplace__items-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 5px;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-top {
+  .marketplace__items-top {
     margin: 15px 0;
     flex-direction: column;
   }
 }
-.marketplace__cars-top__right {
+.marketplace__items-top__right {
   display: flex;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-top__right {
+  .marketplace__items-top__right {
     margin: 15px 0;
   }
 }
-.marketplace__cars-top span {
+.marketplace__items-top span {
   font-size: 13px;
 }
-.marketplace__cars-top a {
+.marketplace__items-top a {
   text-decoration: none;
   color: #5b5b5b;
   font-weight: bold;
   font-size: 13px;
 }
-.marketplace__cars-top p {
-  cursor: pointer;
+.marketplace__items-top p {
   color: #5b5b5b;
   font-weight: bold;
   font-size: 13px;
 }
-.marketplace__cars-main__item {
+.marketplace__items-main__item {
   display: flex;
   margin: 13px 0;
 }
-.marketplace__cars-main__item__left {
+.marketplace__items-main__item__left {
   height: 110px;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main__item__left {
+  .marketplace__items-main__item__left {
     height: unset;
   }
 }
-.marketplace__cars-main__item__left img {
+.marketplace__items-main__item__left img {
   width: 165px;
   height: 110px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (max-width: 992px) {
-  .marketplace__cars-main__item__left img {
+  .marketplace__items-main__item__left img {
     height: 75px;
     width: 86px;
   }
 }
-.marketplace__cars-main__item__middle {
+.marketplace__items-main__item__middle {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 66%;
 }
-.marketplace__cars-main__item__middle .header {
+.marketplace__items-main__item__middle .header {
   font-size: 12px;
   color: black;
   text-decoration: none;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main__item__middle .header {
+  .marketplace__items-main__item__middle .header {
     font-size: 9px;
   }
 }
-.marketplace__cars-main__item__middle-info {
+.marketplace__items-main__item__middle-info {
   display: flex;
   justify-content: space-between;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main__item__middle-info {
+  .marketplace__items-main__item__middle-info {
     display: none;
   }
 }
 @media screen and (max-width: 992px) {
-  .marketplace__cars-main__item__middle-info {
+  .marketplace__items-main__item__middle-info {
     flex-direction: column;
   }
 }
-.marketplace__cars-main__item__middle-info img {
+.marketplace__items-main__item__middle-info img {
   height: 30px;
   width: 25px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.marketplace__cars-main__item__middle-info-item {
+.marketplace__items-main__item__middle-info-item {
   display: flex;
   align-items: center;
   margin-right: 10px;
 }
-.marketplace__cars-main__item__middle-info-item p {
-  margin-left: 10px;
+.marketplace__items-main__item__middle-info-item p {
+  font-size: 13px;
+  max-height: 56px;
+  overflow: hidden;
+}
+.marketplace__items-main__item__middle .address span {
   font-size: 13px;
 }
-.marketplace__cars-main__item__middle .address span {
-  font-size: 13px;
-}
-.marketplace__cars-main__item__middle .address #phone-icon {
+.marketplace__items-main__item__middle .address #phone-icon {
   margin-left: 52px;
 }
-.marketplace__cars-main__item__middle .address a {
+.marketplace__items-main__item__middle .address a {
   color: #5b5b5b;
   text-decoration: none;
   font-size: 13px;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main__item__middle .address a {
+  .marketplace__items-main__item__middle .address a {
     display: none;
   }
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main__item #lineA {
+  .marketplace__items-main__item #lineA {
     display: none;
   }
 }
-.marketplace__cars-main__item__right {
+.marketplace__items-main__item__right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
 }
-.marketplace__cars-main__item__right .price {
+.marketplace__items-main__item__right .price {
   font-size: 17px;
   font-weight: bold;
-  color: #ffcc00;
+  color: #0d9846;
 }
-.marketplace__cars-main__item__right .price-pro {
+.marketplace__items-main__item__right .price-pro {
   padding: 5px;
   background-color: red;
   color: white;
   border-radius: 4px;
 }
-.marketplace__cars-main__item__right img {
+.marketplace__items-main__item__right img {
   height: 25px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.marketplace__cars-main__item__right .date {
+.marketplace__items-main__item__right .date {
   font-size: 13px;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main__item__right .date {
+  .marketplace__items-main__item__right .date {
     display: none;
   }
 }
-.marketplace__cars-main-bottom {
+.marketplace__items-main-bottom {
   margin-bottom: 10px;
   display: flex;
   justify-content: flex-end;
 }
 @media screen and (max-width: 728px) {
-  .marketplace__cars-main-bottom {
+  .marketplace__items-main-bottom {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
-.marketplace__cars-main-bottom a,
-.marketplace__cars-main-bottom p {
+.marketplace__items-main-bottom a,
+.marketplace__items-main-bottom p {
   cursor: pointer;
   color: #5b5b5b;
   font-size: 13px;

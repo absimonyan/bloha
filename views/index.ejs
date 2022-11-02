@@ -7,12 +7,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Барахолка ПМР Доска объявлений ПМР</title>
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body>
     <%- include('components/navbar') -%>
+        <section class="marketplace">
+            <div class="container">
 
+                <div class="marketplace__top">
+                    <span>Главная</span>
+                    <span>Недвижимость</span>
+                </div>
+                <div class="hr"></div>
+                <div class="marketplace-inner">
+                    <%- include('components/sidebar') -%>
+                        <main class="marketplace__items">
+                            <div class="marketplace__items-top">
+                                <div class="marketplace__items-top__left">
+                                    <p>НОВЫЕ ОБЪЯВЛЕНИЕ</p>
+                                </div>
+                                <div class="marketplace__items-top__right">
+                                    <span>Сортировка по: </span>
+                                    <p onclick="orderByDate()"> дате ↓ |</p>
+                                    <p onclick="orderByPrice()"> цене ↓</p>
+                                </div>
+
+                            </div>
+                            <div class="marketplace__items-main">
+                                <!-- Normal itemss -->
+
+                                <div class="marketplace__items-main__item">
+                                    <div class="marketplace__items-main__item__left">
+                                        <a href="./car.php?id=<?= $car['id'] ?>"><img src="images/userPhotos/1.png" alt=""></a>
+                                    </div>
+                                    <div class="marketplace__items-main__item__middle">
+                                        <a href="./car.php?id=<?= $car['id'] ?>" class="header">
+                                            <h2>
+                                                Name
+                                            </h2>
+                                        </a>
+                                        <div class="marketplace__items-main__item__middle-info">
+                                            <div class="marketplace__items-main__item__middle-info-item">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus rem commodi. Non corporis et eaque quia explicabo nihil eligendi aperiam iste iusto, vitae reiciendis maiores beatae consequuntur! Consectetur dolorum temporibus magni reiciendis
+                                                    hic neque et asperiores ducimus recusandae similique?
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="address">
+                                            <div class="address_line">
+
+                                                <span>
+                                                    Тирасполь
+                                                    </span>
+                                                <span id="lineA">|</span>
+                                                <a href="tel:099">
+                                                    +37377706118
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="marketplace__items-main__item__right">
+                                        <div class="price">$ 990
+                                        </div>
+                                        <a href="./saved.php?add-saved=<?= $car['id'] ?>">
+
+                                            <img src="images/icons/note1.png" alt="">
+
+                                            <!-- <img src="./img/icons/note1.png" alt=""> -->
+
+                                        </a>
+                                        <p class="date">
+                                            22 Ноябрь 20:56
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+
+
+                            </div>
+
+                        </main>
+                </div>
+            </div>
+        </section>
+        <script src="/scripts/main.js"></script>
 </body>
 
 </html>
