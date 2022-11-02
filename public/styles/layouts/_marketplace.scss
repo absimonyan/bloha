@@ -14,7 +14,7 @@ body {
     &__top {
         padding: 10px 0;
         span {
-            font-size: 14px;
+            font-size: 13px;
             color: #5b5b5b;
             cursor: pointer;
             &::after {
@@ -45,13 +45,14 @@ body {
         }
         .tabs {
             overflow: hidden;
+            background-color: #f5f5f5;
         }
         .tab {
             width: 100%;
             color: black;
             font-size: 13px;
             overflow: hidden;
-            border-bottom: 1px solid #e1e1e1;
+            // border-bottom: 1px solid #e1e1e1;
             &-label {
                 display: flex;
                 justify-content: space-between;
@@ -73,11 +74,12 @@ body {
             }
             &-content {
                 max-height: 0;
-                padding: 0 1em;
+                // padding: 0 1em;
                 color: #5b5b5b;
                 background: $lightblue;
                 transition: all .35s;
                 select {
+                    opacity: 0;
                     color: black;
                     width: 100%;
                     outline: none;
@@ -133,6 +135,9 @@ body {
                 &::after {
                     transform: rotate(90deg);
                 }
+            }
+            ~.tab-content select {
+                opacity: 1;
             }
             ~.tab-content {
                 max-height: 100vh;

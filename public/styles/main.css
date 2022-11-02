@@ -49,13 +49,13 @@ body {
   border: none;
   padding: 0 14px;
   height: 50px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  background-color: #D9DADA;
+  background-color: #EBECEC;
   transition: 0.3s;
 }
 .btn:hover {
-  background-color: #EBECEC;
+  background-color: #D9DADA;
 }
 
 .btn.alt {
@@ -65,7 +65,7 @@ body {
   padding: 0 14px;
   height: 50px;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   background-color: #D9DADA;
   transition: 0.3s;
   background-color: #0d9846;
@@ -79,6 +79,13 @@ body {
   background-color: #EBECEC;
   height: 1px;
   max-height: 0.5px;
+}
+
+.hr.alt {
+  margin: 0 auto;
+  width: 70%;
+  height: 1px;
+  max-height: 1px;
 }
 
 .notification {
@@ -182,6 +189,7 @@ nav .nav__inner {
 }
 nav .logo {
   height: 50px;
+  width: 50px;
   color: black;
   font-size: 30px;
   line-height: 40px;
@@ -336,7 +344,7 @@ body {
   padding: 10px 0;
 }
 .marketplace__top span {
-  font-size: 14px;
+  font-size: 13px;
   color: #5b5b5b;
   cursor: pointer;
 }
@@ -369,13 +377,13 @@ body {
 }
 .marketplace__sidebar .tabs {
   overflow: hidden;
+  background-color: #f5f5f5;
 }
 .marketplace__sidebar .tab {
   width: 100%;
   color: black;
   font-size: 13px;
   overflow: hidden;
-  border-bottom: 1px solid #e1e1e1;
 }
 .marketplace__sidebar .tab-label {
   display: flex;
@@ -397,12 +405,12 @@ body {
 }
 .marketplace__sidebar .tab-content {
   max-height: 0;
-  padding: 0 1em;
   color: #5b5b5b;
   background: #f5f5f5;
   transition: all 0.35s;
 }
 .marketplace__sidebar .tab-content select {
+  opacity: 0;
   color: black;
   width: 100%;
   outline: none;
@@ -454,6 +462,9 @@ body {
 }
 .marketplace__sidebar input:checked + .tab-label::after {
   transform: rotate(90deg);
+}
+.marketplace__sidebar input:checked ~ .tab-content select {
+  opacity: 1;
 }
 .marketplace__sidebar input:checked ~ .tab-content {
   max-height: 100vh;
