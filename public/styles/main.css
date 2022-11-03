@@ -39,6 +39,12 @@ body {
   }
 }
 
+@media screen and (min-width: 728px) {
+  .container.alt {
+    padding: 0;
+  }
+}
+
 .hidden-t {
   display: none !important;
 }
@@ -201,7 +207,7 @@ nav .logo img {
 }
 nav .nav__search__box {
   display: flex;
-  width: 49%;
+  width: 57%;
 }
 @media screen and (max-width: 728px) {
   nav .nav__search__box {
@@ -218,7 +224,7 @@ nav .nav__search__box select {
   outline: none;
   border: 1px solid rgb(214, 214, 214);
   padding: 4px;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 @media screen and (max-width: 728px) {
   nav .nav__search__box select {
@@ -342,6 +348,9 @@ body {
 }
 .marketplace__top {
   padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .marketplace__top span {
   font-size: 13px;
@@ -353,6 +362,12 @@ body {
 }
 .marketplace__top span:last-child::after {
   display: none;
+}
+.marketplace__top .right-href {
+  font-size: 13px;
+  color: #0d9846;
+  text-decoration: none;
+  font-weight: 500;
 }
 .marketplace__sidebar {
   flex: 1 0 20%;

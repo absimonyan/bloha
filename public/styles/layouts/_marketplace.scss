@@ -13,6 +13,9 @@ body {
     }
     &__top {
         padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         span {
             font-size: 13px;
             color: #5b5b5b;
@@ -23,6 +26,12 @@ body {
             &:last-child::after {
                 display: none;
             }
+        }
+        .right-href {
+            font-size: 13px;
+            color: $green;
+            text-decoration: none;
+            font-weight: 500;
         }
     }
     &__sidebar {

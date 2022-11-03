@@ -19,6 +19,12 @@
     }
 }
 
+.container.alt {
+    @media screen and (min-width: 728px) {
+        padding: 0;
+    }
+}
+
 .hidden-t {
     display: none!important;
 }
