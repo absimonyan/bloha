@@ -27,11 +27,25 @@ body {
                 display: none;
             }
         }
-        .right-href {
-            font-size: 13px;
-            color: $green;
-            text-decoration: none;
-            font-weight: 500;
+        &__right {
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 13px;
+                color: #5b5b5b;
+                margin-right: 5px;
+            }
+            select {
+                outline: none;
+                border: 1px solid rgb(214, 214, 214);
+                padding: 0 4px;
+            }
+            .right-href {
+                font-size: 13px;
+                color: $green;
+                text-decoration: none;
+                font-weight: 500;
+            }
         }
     }
     &__sidebar {

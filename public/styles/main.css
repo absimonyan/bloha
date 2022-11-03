@@ -363,7 +363,21 @@ body {
 .marketplace__top span:last-child::after {
   display: none;
 }
-.marketplace__top .right-href {
+.marketplace__top__right {
+  display: flex;
+  align-items: center;
+}
+.marketplace__top__right p {
+  font-size: 13px;
+  color: #5b5b5b;
+  margin-right: 5px;
+}
+.marketplace__top__right select {
+  outline: none;
+  border: 1px solid rgb(214, 214, 214);
+  padding: 0 4px;
+}
+.marketplace__top__right .right-href {
   font-size: 13px;
   color: #0d9846;
   text-decoration: none;

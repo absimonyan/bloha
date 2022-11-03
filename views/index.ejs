@@ -22,7 +22,14 @@
                         <span>Главная</span>
                         <span>Недвижимость</span>
                     </div>
-                    <a href="#" class="right-href"> + Добавить объявление в эту рубрику </a>
+                    <!-- <a href="#" class="right-href"> + Добавить объявление в эту рубрику </a> -->
+                    <div class="marketplace__top__right">
+                        <p>Выберите город:</p>
+                        <select name="" id="">
+                            <option value="">Города</option>
+                        </select>
+                    </div>
+
                 </div>
                 <div class="hr"></div>
                 <div class="marketplace-inner">
@@ -41,55 +48,57 @@
                             </div>
                             <div class="marketplace__items-main">
                                 <!-- Normal itemss -->
+                                <% for( let index = 0; index < 10; index++ ) { %>
+                                    <div class="marketplace__items-main__item">
+                                        <div class="marketplace__items-main__item__left">
+                                            <a href="#"><img src="images/userPhotos/1.png" alt=""></a>
+                                        </div>
+                                        <div class="marketplace__items-main__item__middle">
+                                            <a href="#" class="header">
+                                                <h2>
+                                                    Name
+                                                </h2>
+                                            </a>
+                                            <div class="marketplace__items-main__item__middle-info">
+                                                <div class="marketplace__items-main__item__middle-info-item">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus rem commodi. Non corporis et eaque quia explicabo nihil eligendi aperiam iste iusto, vitae reiciendis maiores beatae consequuntur! Consectetur dolorum temporibus magni reiciendis
+                                                        hic neque et asperiores ducimus recusandae similique?
+                                                    </p>
+                                                </div>
 
-                                <div class="marketplace__items-main__item">
-                                    <div class="marketplace__items-main__item__left">
-                                        <a href="#"><img src="images/userPhotos/1.png" alt=""></a>
-                                    </div>
-                                    <div class="marketplace__items-main__item__middle">
-                                        <a href="#" class="header">
-                                            <h2>
-                                                Name
-                                            </h2>
-                                        </a>
-                                        <div class="marketplace__items-main__item__middle-info">
-                                            <div class="marketplace__items-main__item__middle-info-item">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellendus rem commodi. Non corporis et eaque quia explicabo nihil eligendi aperiam iste iusto, vitae reiciendis maiores beatae consequuntur! Consectetur dolorum temporibus magni reiciendis
-                                                    hic neque et asperiores ducimus recusandae similique?
-                                                </p>
                                             </div>
+                                            <div class="address">
+                                                <div class="address_line">
 
-                                        </div>
-                                        <div class="address">
-                                            <div class="address_line">
-
-                                                <span>
-                                                    Тирасполь
-                                                    </span>
-                                                <span id="lineA">|</span>
-                                                <a href="tel:099">
-                                                    +37377706118
-                                                </a>
+                                                    <span>
+                                                        Тирасполь
+                                                        </span>
+                                                    <span id="lineA">|</span>
+                                                    <a href="tel:099">
+                                                        +37377706118
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="marketplace__items-main__item__right">
-                                        <div class="price">$ 990
+                                        <div class="marketplace__items-main__item__right">
+                                            <div class="price">$ 990
+                                            </div>
+                                            <a href="./saved.php?add-saved=<?= $car['id'] ?>">
+
+                                                <img src="images/icons/note1.png" alt="">
+
+                                                <!-- <img src="./img/icons/note1.png" alt=""> -->
+
+                                            </a>
+                                            <p class="date">
+                                                22 Ноябрь 20:56
+                                            </p>
                                         </div>
-                                        <a href="./saved.php?add-saved=<?= $car['id'] ?>">
-
-                                            <img src="images/icons/note1.png" alt="">
-
-                                            <!-- <img src="./img/icons/note1.png" alt=""> -->
-
-                                        </a>
-                                        <p class="date">
-                                            22 Ноябрь 20:56
-                                        </p>
                                     </div>
-                                </div>
-                                <div class="hr"></div>
+                                    <div class="hr"></div>
+                                    <% } %>
+
 
 
                             </div>
@@ -98,7 +107,9 @@
                 </div>
             </div>
         </section>
-        <script src="/scripts/main.js"></script>
+        <%- include('components/footer') -%>
+
+            <script src="/scripts/main.js"></script>
 </body>
 
 </html>
